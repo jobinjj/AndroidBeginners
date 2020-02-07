@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':androidtabs'
 rootProject.name='Android Beginners'
