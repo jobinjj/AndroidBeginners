@@ -1,0 +1,10 @@
+Create new activity with name splash screen make sure to check launcher activity
+Change theme to no actionbar and set it in manifest file. also remove dafault launcher intent from MainActivity
+Download the heart demo from shapeshifter.design and copy it to android studio
+create ImageView with 200*200 size and set source as animated file
+To remove the to use vector error in ImageView paste this inside default config android.defaultConfig.vectorDrawables.useSupportLibrary = true
+Create animated vector drawable object and add drawable from imageview to it.
+start animation on drawable
+add callback to know when animation is finished and add intent on animation end block
+also add finish() to remove splash screen from activity stack
+alternatively for devices below android marshmallow simply add a handler delay and start the intent when delay finished

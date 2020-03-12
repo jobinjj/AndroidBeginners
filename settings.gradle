@@ -1,2 +1,2 @@
-include ':app', ':loginregister'
+include ':app', ':loginregister', ':androidsplashscreenvector'
 rootProject.name='Android Beginners'
