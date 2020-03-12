@@ -1,0 +1,19 @@
+Create register activity and make it as launcher activity
+Change label to Register
+Change color theme in style.xml
+Add necessary libraries and internet permission in manifest
+Search chrome volley android and copy paste the code
+Create design for the register option
+Show php files in the server and also show the table
+now declare and initialize views in android studio
+Inside button click listener get text from edit texts
+send these values to server and show response as text
+create validation for email and password
+Create Login activity and change label to Login
+Add button to navigate to login activity in register activity
+Implement click listener on the login button and add intent to navigate to login activity
+Copy paste register layout content in the xml file
+Delete container at bottom and change button text to login
+Initialise button and edittext also strings.
+add url string at the top
+on button click validate string from edittext and login

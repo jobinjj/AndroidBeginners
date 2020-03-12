@@ -2,7 +2,6 @@ package com.allianzetechnologies.loginregister;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,29 +14,21 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-public class RegisterActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     EditText email,password;
-    Button btn_register,btn_login;
     String str_email,str_password;
-    String url = "https://shedule.000webhostapp.com/Login%20Register/register.php?";
+    Button btn_login;
+    String url = "https://shedule.000webhostapp.com/Login%20Register/login.php?";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        btn_register = findViewById(R.id.btn_register);
-        btn_login = findViewById(R.id.login);
+        btn_login = findViewById(R.id.btn_login);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
-                startActivity(intent);
-            }
-        });
-        btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 str_email = email.getText().toString();
@@ -49,12 +40,11 @@ public class RegisterActivity extends AppCompatActivity {
                     password.setError("Password not valid");
                     return;
                 }
-
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url + "email=" + str_email + "&password=" + str_password,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
                             }
                         }, new Response.ErrorListener() {
                     @Override
@@ -62,8 +52,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                     }
                 });
-                Volley.newRequestQueue(RegisterActivity.this).add(stringRequest);
+                Volley.newRequestQueue(LoginActivity.this).add(stringRequest);
+
             }
         });
+
     }
 }
