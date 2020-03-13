@@ -1,0 +1,13 @@
+Change theme to no acionbar
+Create layout for each page
+Change activity_main.xml to include viewpager
+init views
+store all slider layouts in int array
+add bottom dots
+Initialize MyViewPagerAdapter
+set adapter on viewpager
+set onPageChangeListener on viewpager
+onPage selected addbottomdots on selected page also change button text
+change button click listeners(when button next is clicked change viewpager item, launch home if its last screen)
+while skip is clicked launch home screen
+Create home screen
