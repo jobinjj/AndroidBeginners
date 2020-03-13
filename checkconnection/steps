@@ -1,0 +1,3 @@
+Add two permissions in the manifest
+Create a method that checks for internet connection and return boolean
+Check boolean on if and show toast accordingly

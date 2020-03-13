@@ -18,10 +18,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
-    private LinearLayout layoutDots;
+    private DotsLayout layoutDots;
     private Button next;
     private Button skip;
-    private TextView[] dots;
     private int[] layouts;
 
     @Override
@@ -46,9 +45,8 @@ public class MainActivity extends AppCompatActivity {
            R.layout.screen2,
            R.layout.screen3
         };
-
-        addBottomDots(0);
-
+        layoutDots.setTotalDots(layouts.length);
+        layoutDots.setSelectedBottomDots(0);
         MyViewPagerAdapter myViewPagerAdapter = new MyViewPagerAdapter(this,layouts);
         viewPager.setAdapter(myViewPagerAdapter);
         final ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                addBottomDots(position);
+                layoutDots.setSelectedBottomDots(position);
                 if (position == layouts.length - 1){
                     next.setText("Start");
                     skip.setVisibility(View.GONE);
@@ -100,20 +98,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void addBottomDots(int currentPage){
-        dots = new TextView[layouts.length];
-
-        layoutDots.removeAllViews();
-        for (int i = 0; i < dots.length; i++) {
-            dots[i] = new TextView(this);
-            dots[i].setText(Html.fromHtml("&#8226;"));
-            dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.colorInActive));
-            layoutDots.addView(dots[i]);
-        }
-
-        if (dots.length > 0){
-            dots[currentPage].setTextColor(getResources().getColor(R.color.colorActive));
-        }
-    }
 }
