@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/checkconnection" />
             <option value="$PROJECT_DIR$/checkconnectionbroadcast" />
+            <option value="$PROJECT_DIR$/glidecaching" />
             <option value="$PROJECT_DIR$/introslider" />
             <option value="$PROJECT_DIR$/loginregister" />
             <option value="$PROJECT_DIR$/wifilistener" />
