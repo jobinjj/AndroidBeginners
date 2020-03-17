@@ -1,2 +1,2 @@
-include ':app', ':loginregister', ':androidsplashscreenvector', ':wifilistener', ':introslider', ':checkconnection', ':checkconnectionbroadcast', ':glidecaching'
+include ':app', ':loginregister', ':androidsplashscreenvector', ':wifilistener', ':introslider', ':checkconnection', ':checkconnectionbroadcast', ':glidecaching', ':mysongs'
 rootProject.name='Android Beginners'
